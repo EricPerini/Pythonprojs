@@ -3,13 +3,10 @@ word = input('Frase a ser descriptografada: ')
 key = (int(input('Chave: '))%36)
 word1 = list(word)
 word2 = []
-print(word1)
 for i in range(len(word1)):
     for j in range(len(alfabeto)):
         if word1[i] == (alfabeto[j]):
-            print('yes', i, j)
             word2.append(alfabeto[j-key])
-            print(word2)
         elif word1[i]== ' ':
                 word2.append(' ')
                 break
