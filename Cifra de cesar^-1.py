@@ -7,6 +7,7 @@ for i in range(len(word1)):
     for j in range(len(alfabeto)):
         if word1[i] == (alfabeto[j]):
             word2.append(alfabeto[j-key])
+            break
         elif word1[i]== ' ':
                 word2.append(' ')
                 break
