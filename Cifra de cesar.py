@@ -6,8 +6,6 @@ word2 = []
 for i in range(len(word1)):
     for j in range(len(alfabeto)):
         if (word1[i])==(alfabeto[j]):
-            if (j+key)>=36:
-                j = j-36
             word2.append(alfabeto[j+key])
             break
         elif word1[i]== ' ':
