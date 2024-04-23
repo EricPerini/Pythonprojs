@@ -42,9 +42,7 @@ def MtrxMult():
                 a1 = a1+x
             MR_aux.append(a1)
         MR.append(MR_aux[:])
-
-    for i in range(len(MR)):
-        print(MR[i])
+    return MR[:]
     
 def MtrxDet():
     LineQunt_m1 = int(input('Quantas linhas: '))
@@ -105,7 +103,7 @@ def MtrxDet():
                 elif (k==3) or (k==7) or (k==11):
                     c = c*M1[i][j-5]
         d = d-a-b-c
-    print(f'O determinante é {d}')
+    return d
 
 def MtrxCrt(x, y):
     MR = []
@@ -114,4 +112,60 @@ def MtrxCrt(x, y):
         for j in range(y):
             MR_aux.append(0)
         MR.append(MR_aux[:])
+    return MR[:]
+
+def MtrxSum():
+    print('Matriz 1')
+    LineQunt_m1 = int(input('Quantas linhas: '))
+    ClumQunt_m1 = int(input('Quantas Colunas: '))
+    print('Matriz 1')
+    M1 = []
+    M1_aux = []
+    for i in range(LineQunt_m1):
+        for j in range(ClumQunt_m1):
+            x = int(input(f'Elemento da Linha {i+1} e coluna {j+1}: '))
+            M1_aux.append(x)
+        M1.append(M1_aux[:])
+        M1_aux.clear()
+    print('Matriz 2')
+    M2 = []
+    M2_aux = []
+    for i in range(LineQunt_m1):
+        for j in range(ClumQunt_m1):
+            y = int(input(f'Elemento da Linha {i+1} e coluna {j+1}: '))
+            M2_aux.append(y)
+        M2.append(M2_aux[:])
+        M2_aux.clear()
+    MR = MtrxCrt(LineQunt_m1, ClumQunt_m1)
+    for i in range(LineQunt_m1):
+        for j in range(ClumQunt_m1):
+            MR[i][j] = float(M1[i][j])+float(M2[i][j])
+    return MR[:]
+
+def MtrxSub():
+    print('Matriz 1')
+    LineQunt_m1 = int(input('Quantas linhas: '))
+    ClumQunt_m1 = int(input('Quantas Colunas: '))
+    print('Matriz 1')
+    M1 = []
+    M1_aux = []
+    for i in range(LineQunt_m1):
+        for j in range(ClumQunt_m1):
+            x = int(input(f'Elemento da Linha {i+1} e coluna {j+1}: '))
+            M1_aux.append(x)
+        M1.append(M1_aux[:])
+        M1_aux.clear()
+    print('Matriz 2')
+    M2 = []
+    M2_aux = []
+    for i in range(LineQunt_m1):
+        for j in range(ClumQunt_m1):
+            y = int(input(f'Elemento da Linha {i+1} e coluna {j+1}: '))
+            M2_aux.append(y)
+        M2.append(M2_aux[:])
+        M2_aux.clear()
+    MR = MtrxCrt(LineQunt_m1, ClumQunt_m1)
+    for i in range(LineQunt_m1):
+        for j in range(ClumQunt_m1):
+            MR[i][j] = float(M1[i][j])-float(M2[i][j])
     return MR[:]
