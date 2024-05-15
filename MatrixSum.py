@@ -1,4 +1,4 @@
-import MyFunctions
+import MatrixOperations
 print('Matriz 1')
 LineQunt_m1 = int(input('Quantas linhas: '))
 ClumQunt_m1 = int(input('Quantas Colunas: '))
@@ -20,7 +20,7 @@ for i in range(LineQunt_m1):
         M2_aux.append(y)
     M2.append(M2_aux[:])
     M2_aux.clear()
-MR = MyFunctions.MtrxCrt(LineQunt_m1, ClumQunt_m1)
+MR = MatrixOperations.MtrxCrt(LineQunt_m1, ClumQunt_m1)
 for i in range(LineQunt_m1):
     for j in range(ClumQunt_m1):
         MR[i][j] = float(M1[i][j])+float(M2[i][j])
